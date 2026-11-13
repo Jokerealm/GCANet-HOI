@@ -172,7 +172,8 @@ def run(args):
     contact_external = {k[len("iacp."):]: v for k, v in external.items() if k.startswith("iacp.")}
     atomic_checkpoint(output / "iacp_final.pt", dict(format="gcanet_iacp_v1", epoch=50,
         model={k: v for k, v in contact_state.items() if k not in contact_external},
-        external_frozen_hashes=contact_external, config=identity))
+        external_frozen_hashes=contact_external,
+        canonical_asset_hashes=model.iacp.canonical_asset_hashes, config=identity))
     write_json(output / "completion.json", dict(complete=True, epoch=50,
         image_visits=visits, optimizer_updates=updates, exported_branch="IACP"))
 

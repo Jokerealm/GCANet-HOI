@@ -21,6 +21,7 @@ def tiny_prior():
     model.detector = nn.Linear(2, 2)
     model.query_proj = nn.Linear(2, 3)
     model.detector.requires_grad_(False)
+    model.canonical_asset_hashes = {'body.png': 'abc'}
     return model
 
 
@@ -50,6 +51,17 @@ class IACPCheckpointTests(unittest.TestCase):
             path = Path(directory)/'iacp.pt'
             torch.save(payload, path)
             with self.assertRaisesRegex(ValueError, 'Fixed pretrained'):
+                model.load_adapted_checkpoint(path)
+
+    def test_canonical_assets_are_verified_when_recorded(self):
+        model = tiny_prior()
+        state = model.state_dict()
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / 'iacp.pt'
+            torch.save({'model': state, 'canonical_asset_hashes': {'body.png': 'abc'}}, path)
+            model.load_adapted_checkpoint(path)
+            torch.save({'model': state, 'canonical_asset_hashes': {'body.png': 'different'}}, path)
+            with self.assertRaisesRegex(ValueError, 'Canonical assets differ'):
                 model.load_adapted_checkpoint(path)
 
     def test_missing_and_extra_learned_state_are_rejected(self):

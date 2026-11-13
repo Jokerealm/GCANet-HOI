@@ -92,7 +92,7 @@ d5383ea8f4877b2472eb973e0fd72d557c7da5d3611bd527ceeb1d7162cbf428  dinov2_vitl14_
 d93f3eb6f3aa001621288290eebc7940c73de59d185bac11c771aaea6b63463a  pihoc.pt
 ```
 
-Compact GCANet checkpoints omit frozen tensors; evaluation verifies that the external initialization matches the checkpoint. Use the same initialization and canonical assets for training and testing.
+Compact GCANet checkpoints omit frozen tensors; evaluation verifies that the external initialization matches the checkpoint. Newly exported IACP checkpoints also record hashes of the generated canonical files, which are checked at evaluation independently of their directory. Older checkpoints without those hashes remain loadable, so use their original canonical assets for training and testing.
 
 ## Canonical contact assets
 

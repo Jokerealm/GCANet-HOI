@@ -27,8 +27,8 @@
       "bytes": 736
     },
     "docs/data.md": {
-      "sha256": "0110bd83cd2d45191b0a9ba4b4d6b98fa47f2c69b9e696fb2d968a4d7caf4fd1",
-      "bytes": 7734
+      "sha256": "94282aa601ab62956f916d07330d034b427fad92843f17dc7acfaa6d6b473e85",
+      "bytes": 7931
     },
     "docs/reproduction.md": {
       "sha256": "3de41f973c28e518da7a2f753b79780a378890196dd0523f2e9abfadb56c0463",
@@ -63,8 +63,8 @@
       "bytes": 8595
     },
     "gcanet/iacp.py": {
-      "sha256": "05a12cdc0a90667828a7669edace5845d1d1924cd59ab72bfb62d42b5b820bc3",
-      "bytes": 30442
+      "sha256": "834701382094c09b191b0098b9f8b75d6e78cdb0c6dabec91b08c29d46a62c0a",
+      "bytes": 30950
     },
     "gcanet/io.py": {
       "sha256": "5c9cd1a5433a9686c38921b56c971642effc0d0050a603e930732816d5c59ad0",
@@ -283,8 +283,8 @@
       "bytes": 21247
     },
     "gcanet/training/runner.py": {
-      "sha256": "bc343dd082a4557511bb766c66e9d4be96ca48d892c6684827073f76f3a8b8b0",
-      "bytes": 10762
+      "sha256": "1923386957e67a0a3a26122353f7895ddb54410732840890c7e89bd9e3db6010",
+      "bytes": 10828
     },
     "gcanet/training/supervision.py": {
       "sha256": "b55719c9038225cf79249f08ae2bb8f39aa131d7f2d9f881e62054d6f29a24fd",
@@ -539,8 +539,8 @@
       "bytes": 6843
     },
     "tests/test_iacp_checkpoint.py": {
-      "sha256": "ff3d4d7192acf7b8d343522b0aa8941f7958d10c5b7179185eb9001c3b65b2d0",
-      "bytes": 2988
+      "sha256": "0b45bec358127c8a0aa0d4aa304e779a9d51367fa8941f5d7a2068d696f44aab",
+      "bytes": 3650
     },
     "tests/test_release.py": {
       "sha256": "0ebc3fb20dff6aa727955a14be16dfd16ac68cea9c12214311ae171ca2c1b4f4",

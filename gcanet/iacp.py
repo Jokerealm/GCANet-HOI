@@ -198,11 +198,16 @@ class InstanceAwareContactPrior(nn.Module):
         if expected_hash and file_sha256(canonical_manifest) != expected_hash:
             raise ValueError('Canonical manifest hash mismatch')
         cm = json.loads(canonical_manifest.read_text())
+        self.canonical_asset_hashes = {}
         for rec in cm['files']:
             # Manifest paths are portable; older manifests may contain an absolute prefix.
             asset = canonical_root / Path(rec['path']).name
-            if file_sha256(asset) != rec['sha256']:
+            digest = file_sha256(asset)
+            if digest != rec['sha256']:
                 raise ValueError('Canonical asset hash mismatch: ' + str(asset))
+            if asset.name in self.canonical_asset_hashes:
+                raise ValueError('Duplicate canonical asset: ' + asset.name)
+            self.canonical_asset_hashes[asset.name] = digest
         self.initialization = 'contact'
         self.activation_checkpointing=bool(activation_checkpointing)
         if checkpoint_policy not in ('all','none','alternating'):
@@ -482,6 +487,9 @@ class InstanceAwareContactPrior(nn.Module):
         only after hashes establish that the restored fixed tensors are identical.
         """
         saved = torch.load(Path(path), map_location='cpu', weights_only=False, mmap=True)
+        expected_assets = saved.get('canonical_asset_hashes')
+        if expected_assets is not None and expected_assets != self.canonical_asset_hashes:
+            raise ValueError('Canonical assets differ from the IACP training checkpoint')
         state = saved.get('iacp', saved.get('model', saved.get('state_dict', saved)))
         if not isinstance(state, dict):
             raise ValueError('Expected an IACP parameter dictionary')
