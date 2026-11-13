@@ -122,6 +122,8 @@ The main-paper BEHAVE result is:
 
 These are the recorded paper results on all 4,129 test frames, using the retained epoch-50 predictors. They are not a new training result from this release. Human/object CD uses joint similarity alignment; contact uses the reconstructed placement before alignment and the benchmark's 5 cm threshold. See [metric definitions and evaluation protocol](docs/reproduction.md#evaluation-and-reported-result).
 
+An independent re-evaluation with those predictors on one RTX 4090, batch size 2 and seed 123 covered all 4,129 frames and obtained 3.868855 cm human CD, 6.889986 cm object CD, 0.677244 precision, 0.669874 recall and 0.673539 F1. Small differences from the recorded result can occur with different batch sizes and floating-point execution; the pretrained GCANet checkpoints used for this check are not included in the repository.
+
 ## Acknowledgements
 
 Our implementation builds on [HOI-TG](https://github.com/ZhenrongWang/HOI-TG), [CONTHO](https://github.com/dqj5182/CONTHO_RELEASE), and [Hand4Whole](https://github.com/mks0601/Hand4Whole_RELEASE) for human–object reconstruction; [DINOv2](https://github.com/facebookresearch/dinov2) for semantic image features; and [Pi-HOC](https://github.com/SravanChittupalli/Pi-HOC), [DETR](https://github.com/facebookresearch/detr), and [Segment Anything](https://github.com/facebookresearch/segment-anything) for the contact predictor. Canonical-view preparation follows the published rendering definitions of [InteractVLM](https://github.com/saidwivedi/InteractVLM).
