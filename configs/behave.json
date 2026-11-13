@@ -1,0 +1,29 @@
+{
+  "dataset": "BEHAVE",
+  "data_root": "data",
+  "dino_checkpoint": "assets/dinov2_vitl14_pretrain.pth",
+  "iacp_assets": {
+    "pretrained_checkpoint": "assets/pihoc.pt",
+    "canonical_root": "assets/iacp_canonical"
+  },
+  "evaluation": {"seed": 123, "batch_size": 2, "workers": 0},
+  "iacp_training": {
+    "seed": 123,
+    "epochs": 50,
+    "micro_batch": 8,
+    "accumulate": 6,
+    "workers": 2,
+    "old_lr": 0.00001,
+    "iacp_if_lr": 0.000005,
+    "iacp_decoder_lr": 0.00001,
+    "new_lr": 0.0001,
+    "adam_betas": [0.5, 0.999],
+    "lr_min_ratio": 0.1,
+    "loss_ramp_epochs": 5,
+    "gradient_clip_norm": 10.0,
+    "speed_equivalent_optimizations": true,
+    "contact_checkpoint_policy": "all",
+    "edge_chunk": 32
+  }
+}
+

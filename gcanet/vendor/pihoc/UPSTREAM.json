@@ -1,0 +1,286 @@
+{
+  "repository": "https://github.com/SravanChittupalli/Pi-HOC",
+  "commit": "f6e42b7bff6e703a4dd5b85e417ffbe889919861",
+  "patches": [
+    "isolated pihoc_vendor package imports",
+    "DETR pretrained=False: full released checkpoint supplies weights",
+    "unused adapter import disabled (released no_interactionadapter)",
+    "SAM package init excludes unused automatic segmentation",
+    "canonical constants exclude unused geodesic asset loading",
+    "DINO memory-efficient attention uses equivalent torch scaled_dot_product_attention with released additive pair mask; avoids xformers dependency",
+    "GCANet release: package-qualified imports; exclude unused detector plotting utility"
+  ],
+  "files": [
+    {
+      "path": "dinov2/layers/patch_embed.py",
+      "upstream_sha256": "40da6add3d811198ea3e17cb99cdd4e5cda59e369efbbe3d18d89308618cf142",
+      "adapted_sha256": "40da6add3d811198ea3e17cb99cdd4e5cda59e369efbbe3d18d89308618cf142",
+      "localized_before_release_sha256": "40da6add3d811198ea3e17cb99cdd4e5cda59e369efbbe3d18d89308618cf142"
+    },
+    {
+      "path": "dinov2/layers/dino_head.py",
+      "upstream_sha256": "9fdb1fa61c0609dc0876f711f9d0d828c33bf9fd972aab3d9c968d44e16b98d1",
+      "adapted_sha256": "9fdb1fa61c0609dc0876f711f9d0d828c33bf9fd972aab3d9c968d44e16b98d1",
+      "localized_before_release_sha256": "9fdb1fa61c0609dc0876f711f9d0d828c33bf9fd972aab3d9c968d44e16b98d1"
+    },
+    {
+      "path": "dinov2/layers/__init__.py",
+      "upstream_sha256": "1b55deed39d5ab0b589bef421bbfe06f24a10cd590a0f8403234c9ee4e34109d",
+      "adapted_sha256": "1b55deed39d5ab0b589bef421bbfe06f24a10cd590a0f8403234c9ee4e34109d",
+      "localized_before_release_sha256": "1b55deed39d5ab0b589bef421bbfe06f24a10cd590a0f8403234c9ee4e34109d"
+    },
+    {
+      "path": "dinov2/layers/attention.py",
+      "upstream_sha256": "9dd5a5a7452a4908d53a0f046a20b4f29f34b7414f78653217887d0b162b684c",
+      "adapted_sha256": "38b19929cbceaa0e07a67add1811299705f0258878105673bb8b57144ae69ad5",
+      "localized_before_release_sha256": "38b19929cbceaa0e07a67add1811299705f0258878105673bb8b57144ae69ad5"
+    },
+    {
+      "path": "dinov2/layers/swiglu_ffn.py",
+      "upstream_sha256": "e46d2948fb97e497cf991ff82ce30cb59b59fdf2e12a19568417113716b4f119",
+      "adapted_sha256": "e46d2948fb97e497cf991ff82ce30cb59b59fdf2e12a19568417113716b4f119",
+      "localized_before_release_sha256": "e46d2948fb97e497cf991ff82ce30cb59b59fdf2e12a19568417113716b4f119"
+    },
+    {
+      "path": "dinov2/layers/block.py",
+      "upstream_sha256": "696b4fb4548f3a7b0abcd0e4d4ee0ea7bf03cdab895a3d631283622b774696fc",
+      "adapted_sha256": "696b4fb4548f3a7b0abcd0e4d4ee0ea7bf03cdab895a3d631283622b774696fc",
+      "localized_before_release_sha256": "696b4fb4548f3a7b0abcd0e4d4ee0ea7bf03cdab895a3d631283622b774696fc"
+    },
+    {
+      "path": "dinov2/layers/layer_scale.py",
+      "upstream_sha256": "dadd5aafe178f1bf72a205a02a6645c7e635cacbad585d4a7369c200c6e89135",
+      "adapted_sha256": "dadd5aafe178f1bf72a205a02a6645c7e635cacbad585d4a7369c200c6e89135",
+      "localized_before_release_sha256": "dadd5aafe178f1bf72a205a02a6645c7e635cacbad585d4a7369c200c6e89135"
+    },
+    {
+      "path": "dinov2/layers/drop_path.py",
+      "upstream_sha256": "b9f8236e86054b9d9a71275efcad2a9ecaa1f86b529d4b8d6109ddb5e806f67a",
+      "adapted_sha256": "b9f8236e86054b9d9a71275efcad2a9ecaa1f86b529d4b8d6109ddb5e806f67a",
+      "localized_before_release_sha256": "b9f8236e86054b9d9a71275efcad2a9ecaa1f86b529d4b8d6109ddb5e806f67a"
+    },
+    {
+      "path": "dinov2/layers/mlp.py",
+      "upstream_sha256": "255825c73b60a916dd00eb1e38aacbcdbf316e40d6a005efb46e245b7edb43aa",
+      "adapted_sha256": "255825c73b60a916dd00eb1e38aacbcdbf316e40d6a005efb46e245b7edb43aa",
+      "localized_before_release_sha256": "255825c73b60a916dd00eb1e38aacbcdbf316e40d6a005efb46e245b7edb43aa"
+    },
+    {
+      "path": "dinov2/models/__init__.py",
+      "upstream_sha256": "b93329ce676f3eb0c9a7790d1b3b2b114a0855ea8dc76e32e262d1a7dc6c55ae",
+      "adapted_sha256": "b93329ce676f3eb0c9a7790d1b3b2b114a0855ea8dc76e32e262d1a7dc6c55ae",
+      "localized_before_release_sha256": "b93329ce676f3eb0c9a7790d1b3b2b114a0855ea8dc76e32e262d1a7dc6c55ae"
+    },
+    {
+      "path": "dinov2/models/vision_transformer.py",
+      "upstream_sha256": "a4aa80bc0cac6da8d65a45af983485a568c78eab570eb4165ec1667258e045fd",
+      "adapted_sha256": "f3f0b2a459cc95917a768260e23691f18ddeeb27dd896ef074514aaaaf6ad44f",
+      "localized_before_release_sha256": "4aa66d8196f072a156e2b6163c119635f729a807456140c9c2ad34251a2b9d17"
+    },
+    {
+      "path": "detr/models/backbone.py",
+      "upstream_sha256": "6ee87cdb91ca3df38550336c4f5d5b297a5db8e4be8f6c2c0e96e0d88c96d918",
+      "adapted_sha256": "1449cf3f068d1018cb709ee461e76b6a736d9e1454e8536e9c8662217777c6aa",
+      "localized_before_release_sha256": "740cc6c63d7a31bcb556322ba896d996c0b325d90d428c7ddcb830a6ef2033b5"
+    },
+    {
+      "path": "detr/models/position_encoding.py",
+      "upstream_sha256": "c50834d862a3f7970a3dee3f71ca70f0455bb7e7e627aa2587d2dc8e8b6bd1c8",
+      "adapted_sha256": "55aa2cac3e25b0873197ca7414c038e74b8b73af68b651af78c11d60d51eb837",
+      "localized_before_release_sha256": "b92a0cfba816c041096af771877389e5fd7c9aa27d8d2ff7ab89a396a4f9655a"
+    },
+    {
+      "path": "detr/models/matcher.py",
+      "upstream_sha256": "5dc956c06849722bd754806e559e420c13364e286546a5c9c04f8820e9c99b20",
+      "adapted_sha256": "330a20380e3202b43f609dcb8a7c10a1c98afda7a679a471d9294e03ebf748c4",
+      "localized_before_release_sha256": "0409f7d5c78f0d7a9d9198154bb79413508694e37b97ddba10410b5ecb1fd4d0"
+    },
+    {
+      "path": "detr/models/transformer.py",
+      "upstream_sha256": "730677b5e9b6127d502e39cf42b0292856e6432815491050dcbaf84b4a6b4f6e",
+      "adapted_sha256": "730677b5e9b6127d502e39cf42b0292856e6432815491050dcbaf84b4a6b4f6e",
+      "localized_before_release_sha256": "730677b5e9b6127d502e39cf42b0292856e6432815491050dcbaf84b4a6b4f6e"
+    },
+    {
+      "path": "detr/models/__init__.py",
+      "upstream_sha256": "5ad1d97529bc1b52a24a8ed7ee5ac19e5ba2742a8385e2dcbff7e86415f85c35",
+      "adapted_sha256": "5ad1d97529bc1b52a24a8ed7ee5ac19e5ba2742a8385e2dcbff7e86415f85c35",
+      "localized_before_release_sha256": "5ad1d97529bc1b52a24a8ed7ee5ac19e5ba2742a8385e2dcbff7e86415f85c35"
+    },
+    {
+      "path": "detr/models/segmentation.py",
+      "upstream_sha256": "bb9c8094f2c747b15c1c077a2c40f93b07f2fd48f0820f7611dcaadf5d966957",
+      "adapted_sha256": "1dda0119a7b26aba0b11f7e805a76824b2b4b6c0224aeaf2d38541dd598004f2",
+      "localized_before_release_sha256": "50167cc58ddab0990567509cad05c46f5a5271d7446fbed56df94f4d17ba188b"
+    },
+    {
+      "path": "detr/models/detr.py",
+      "upstream_sha256": "b5a584ada4d074d16852f9ad87ebc75bbdc91386b630755f993cb3fbf2290d42",
+      "adapted_sha256": "5ad33b5ce7752eafdfbcc9978f27f996974a6b589d4a0f31b67d45642f086497",
+      "localized_before_release_sha256": "8260e4e58b2fb42bf690b1b814b0a90f249eda98db9e43a7f440064d40c21441"
+    },
+    {
+      "path": "detr/util/box_ops.py",
+      "upstream_sha256": "f0c1c3e27b0f69955e74b09b4ae1898e41e409d1af292c478ba8be71856112fc",
+      "adapted_sha256": "f0c1c3e27b0f69955e74b09b4ae1898e41e409d1af292c478ba8be71856112fc",
+      "localized_before_release_sha256": "f0c1c3e27b0f69955e74b09b4ae1898e41e409d1af292c478ba8be71856112fc"
+    },
+    {
+      "path": "detr/util/__init__.py",
+      "upstream_sha256": "9e535c45af09ac24ef8d5631a151f77febafe72a92ad6bfeb2d941f0c4a54e35",
+      "adapted_sha256": "9e535c45af09ac24ef8d5631a151f77febafe72a92ad6bfeb2d941f0c4a54e35",
+      "localized_before_release_sha256": "9e535c45af09ac24ef8d5631a151f77febafe72a92ad6bfeb2d941f0c4a54e35"
+    },
+    {
+      "path": "detr/util/misc.py",
+      "upstream_sha256": "b56dfabebf8eded2e7dbf359e167bd308d9c75ee0394f63a751cad9eee597f00",
+      "adapted_sha256": "b56dfabebf8eded2e7dbf359e167bd308d9c75ee0394f63a751cad9eee597f00",
+      "localized_before_release_sha256": "b56dfabebf8eded2e7dbf359e167bd308d9c75ee0394f63a751cad9eee597f00"
+    },
+    {
+      "path": "models/segment_anything/predictor.py",
+      "upstream_sha256": "baac59008e5abe9b412cf0e4d4dcbcdd6ed7bf0a1c12c9e368cfc413c2a49aa6",
+      "adapted_sha256": "baac59008e5abe9b412cf0e4d4dcbcdd6ed7bf0a1c12c9e368cfc413c2a49aa6",
+      "localized_before_release_sha256": "baac59008e5abe9b412cf0e4d4dcbcdd6ed7bf0a1c12c9e368cfc413c2a49aa6"
+    },
+    {
+      "path": "models/segment_anything/build_sam.py",
+      "upstream_sha256": "756da55a7c219c7d7c9ea7c67c283a36a54b266c1c8750047ea7efc73d0caee5",
+      "adapted_sha256": "756da55a7c219c7d7c9ea7c67c283a36a54b266c1c8750047ea7efc73d0caee5",
+      "localized_before_release_sha256": "756da55a7c219c7d7c9ea7c67c283a36a54b266c1c8750047ea7efc73d0caee5"
+    },
+    {
+      "path": "models/segment_anything/__init__.py",
+      "upstream_sha256": "ebcae56a18711b7571ed0c99c6ac0ee744688f4b210c866f3eb8528a4030215c",
+      "adapted_sha256": "1bb60e481e88c4bf6b23bc1394c3114d43ee80374fe608fa399c221631dc6925",
+      "localized_before_release_sha256": "1bb60e481e88c4bf6b23bc1394c3114d43ee80374fe608fa399c221631dc6925"
+    },
+    {
+      "path": "models/segment_anything/automatic_mask_generator.py",
+      "upstream_sha256": "6b320bdd37792986990a305adc78baf71a7e8e16e6feef8d2aa1bba5734df05c",
+      "adapted_sha256": "6b320bdd37792986990a305adc78baf71a7e8e16e6feef8d2aa1bba5734df05c",
+      "localized_before_release_sha256": "6b320bdd37792986990a305adc78baf71a7e8e16e6feef8d2aa1bba5734df05c"
+    },
+    {
+      "path": "models/segment_anything/modeling/common.py",
+      "upstream_sha256": "09398b9fb6da00a767c1d3214b7cc8d34085ce0322a61fb9486a6d5cea946716",
+      "adapted_sha256": "09398b9fb6da00a767c1d3214b7cc8d34085ce0322a61fb9486a6d5cea946716",
+      "localized_before_release_sha256": "09398b9fb6da00a767c1d3214b7cc8d34085ce0322a61fb9486a6d5cea946716"
+    },
+    {
+      "path": "models/segment_anything/modeling/transformer.py",
+      "upstream_sha256": "f7a65a95664b3d7c1d1658dcad12d3703110180f922d9ea1307051eee949fd1f",
+      "adapted_sha256": "f7a65a95664b3d7c1d1658dcad12d3703110180f922d9ea1307051eee949fd1f",
+      "localized_before_release_sha256": "f7a65a95664b3d7c1d1658dcad12d3703110180f922d9ea1307051eee949fd1f"
+    },
+    {
+      "path": "models/segment_anything/modeling/__init__.py",
+      "upstream_sha256": "a87111db3eb9c90c942d218c7146e4e23dc6e75a4781f9658f5f2f047f59ce19",
+      "adapted_sha256": "a87111db3eb9c90c942d218c7146e4e23dc6e75a4781f9658f5f2f047f59ce19",
+      "localized_before_release_sha256": "a87111db3eb9c90c942d218c7146e4e23dc6e75a4781f9658f5f2f047f59ce19"
+    },
+    {
+      "path": "models/segment_anything/modeling/prompt_encoder.py",
+      "upstream_sha256": "9a92ef1ee1db2ae0f1be43ea891e57faeb465eb79297ca2f51d7e72f2dfc98a2",
+      "adapted_sha256": "9a92ef1ee1db2ae0f1be43ea891e57faeb465eb79297ca2f51d7e72f2dfc98a2",
+      "localized_before_release_sha256": "9a92ef1ee1db2ae0f1be43ea891e57faeb465eb79297ca2f51d7e72f2dfc98a2"
+    },
+    {
+      "path": "models/segment_anything/modeling/mask_decoder.py",
+      "upstream_sha256": "b81734bdaf4352350854616743accd6b83bc6a50158d1a9861f0492ac3675fd5",
+      "adapted_sha256": "b81734bdaf4352350854616743accd6b83bc6a50158d1a9861f0492ac3675fd5",
+      "localized_before_release_sha256": "b81734bdaf4352350854616743accd6b83bc6a50158d1a9861f0492ac3675fd5"
+    },
+    {
+      "path": "models/segment_anything/modeling/sam.py",
+      "upstream_sha256": "eaff5d3d0c9bf5e31071ccc830d68f136a94a3b67fb3421654f08d86648d0803",
+      "adapted_sha256": "eaff5d3d0c9bf5e31071ccc830d68f136a94a3b67fb3421654f08d86648d0803",
+      "localized_before_release_sha256": "eaff5d3d0c9bf5e31071ccc830d68f136a94a3b67fb3421654f08d86648d0803"
+    },
+    {
+      "path": "models/segment_anything/modeling/image_encoder.py",
+      "upstream_sha256": "3d03b4299069c08aa7b56a785c57f1844243b1862b76988d0ae12bdecfe59a50",
+      "adapted_sha256": "3d03b4299069c08aa7b56a785c57f1844243b1862b76988d0ae12bdecfe59a50",
+      "localized_before_release_sha256": "3d03b4299069c08aa7b56a785c57f1844243b1862b76988d0ae12bdecfe59a50"
+    },
+    {
+      "path": "models/segment_anything/utils/amg.py",
+      "upstream_sha256": "1b3e98a7246ac4ecf9263690492f9c085af5f7e391833be5b22863ea3a8fbbc8",
+      "adapted_sha256": "1b3e98a7246ac4ecf9263690492f9c085af5f7e391833be5b22863ea3a8fbbc8",
+      "localized_before_release_sha256": "1b3e98a7246ac4ecf9263690492f9c085af5f7e391833be5b22863ea3a8fbbc8"
+    },
+    {
+      "path": "models/segment_anything/utils/__init__.py",
+      "upstream_sha256": "34bd8069c54764e7b8d73a78905dbe6467140a2f73170875128f6ca4d8cdd0aa",
+      "adapted_sha256": "34bd8069c54764e7b8d73a78905dbe6467140a2f73170875128f6ca4d8cdd0aa",
+      "localized_before_release_sha256": "34bd8069c54764e7b8d73a78905dbe6467140a2f73170875128f6ca4d8cdd0aa"
+    },
+    {
+      "path": "models/segment_anything/utils/transforms.py",
+      "upstream_sha256": "e22f2298806bc3dc5551558fbdfe14c5da2f70ab1325933507004ced187d7275",
+      "adapted_sha256": "e22f2298806bc3dc5551558fbdfe14c5da2f70ab1325933507004ced187d7275",
+      "localized_before_release_sha256": "e22f2298806bc3dc5551558fbdfe14c5da2f70ab1325933507004ced187d7275"
+    },
+    {
+      "path": "models/segment_anything/utils/onnx.py",
+      "upstream_sha256": "7f6cd4ab4b25ceb0f914b1866bdde3938d4897a695146f4d58f43e74bbfcfd23",
+      "adapted_sha256": "7f6cd4ab4b25ceb0f914b1866bdde3938d4897a695146f4d58f43e74bbfcfd23",
+      "localized_before_release_sha256": "7f6cd4ab4b25ceb0f914b1866bdde3938d4897a695146f4d58f43e74bbfcfd23"
+    },
+    {
+      "path": "models/contact_decoders/ivlm_contact.py",
+      "upstream_sha256": "55a3fbeccfebe5a6667e1b516ccab3daceb2411ef8f470b9905a4c188e9ba403",
+      "adapted_sha256": "0ed05d7c11d094d24c240501324562a8ae479cbdbfebd899ea08935810428bd0",
+      "localized_before_release_sha256": "dd3127ba855ad211b0af3d909f41f0173694941d41a4479ccf45e9442644c0eb"
+    },
+    {
+      "path": "LICENSE",
+      "upstream_sha256": "deffc25a842638bf707ab56f8d6142fa4d8abfb0a40605b21f67de1c56534536",
+      "adapted_sha256": "deffc25a842638bf707ab56f8d6142fa4d8abfb0a40605b21f67de1c56534536",
+      "localized_before_release_sha256": "deffc25a842638bf707ab56f8d6142fa4d8abfb0a40605b21f67de1c56534536"
+    },
+    {
+      "path": "detr/LICENSE",
+      "upstream_sha256": "b208c52b00a2df2c8f4c3298c34407bf2bfe409968213372251c91fcc737a1a5",
+      "adapted_sha256": "b208c52b00a2df2c8f4c3298c34407bf2bfe409968213372251c91fcc737a1a5",
+      "localized_before_release_sha256": "b208c52b00a2df2c8f4c3298c34407bf2bfe409968213372251c91fcc737a1a5"
+    },
+    {
+      "path": "models/losses.py",
+      "upstream_sha256": "6560cc0ebef6686e734ed6db15545b65caa4c17e6a861799a0377f7f09dc282f",
+      "adapted_sha256": "81024b70425fda311d24ca67afc7821479d142126a063a0d571a99551b67f01d",
+      "localized_before_release_sha256": "41cd151cd53bdc484ad0d7cbf6c52c1c176114aea229c98fe0189d8984eaabb1"
+    },
+    {
+      "path": "utils/ops.py",
+      "upstream_sha256": "b5e9d7da11fcd26ad7515275428daeea3229dab62c244baa687beddad815679d",
+      "adapted_sha256": "79dc4297abe992d2739d581a2dcc62b1010604639a427b7bac9ceb3253efe7a5",
+      "localized_before_release_sha256": "aa4a7b0250121b538e94a6c10cdaaf88ef65fc1e1ac773545b8b1856e5c957be"
+    },
+    {
+      "path": "utils/postprocessor.py",
+      "upstream_sha256": "84a4f490c825e6ed52891ad1ec79e07c59a9ea14f38deb879be845b58cb95d2f",
+      "adapted_sha256": "dfda7fcb9a06fdc4681f8bc6c23732718e6c1bd6affd06bfca559be117375a61",
+      "localized_before_release_sha256": "ee41f93dcd7668f80d3fbb5f55989bc721a5860303183cff719e1df242f5aef3"
+    }
+  ],
+  "additional_original_component_licenses": [
+    {
+      "component": "DINOv2",
+      "path": "dinov2/LICENSE",
+      "url": "https://raw.githubusercontent.com/facebookresearch/dinov2/main/LICENSE",
+      "sha256": "600cc67cc4cb2f5ea317dcfc687ad1c74dc4bec8782bbe9db0afd83513b935b7",
+      "license": "Apache-2.0"
+    },
+    {
+      "component": "SAM",
+      "path": "models/segment_anything/LICENSE",
+      "url": "https://raw.githubusercontent.com/facebookresearch/segment-anything/main/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "license": "Apache-2.0"
+    }
+  ],
+  "release_patches": [
+    "Relocate package imports from pihoc_vendor to gcanet.vendor.pihoc; retain upstream names, attribution, and component licenses."
+  ]
+}

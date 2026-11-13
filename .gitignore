@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+data/
+assets/
+checkpoints/
+outputs/
+*.pt
+*.pth
+*.pth.tar
+*.npz
+*.npy
+*.pkl
+*.log
+.DS_Store

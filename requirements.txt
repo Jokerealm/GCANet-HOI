@@ -1,0 +1,23 @@
+# Python 3.10. Install torch==2.6.0 and torchvision==0.21.0 separately
+# using the CUDA 11.8 index shown in README.md.
+# Install chumpy==0.70 after NumPy/SciPy with --no-build-isolation.
+# PyTorch3D requires a separate source build; see docs/reproduction.md.
+numpy==1.26.4
+scipy==1.15.3
+chumpy==0.70
+smplx==0.1.28
+opencv-python==4.9.0.80
+Pillow==11.3.0
+pycocotools==2.0.11
+easydict==1.13
+PyYAML==6.0.3
+trimesh==4.12.2
+rtree==1.4.1
+scikit-image==0.25.2
+scikit-learn==1.7.2
+matplotlib==3.10.9
+torchgeometry==0.1.2
+tqdm==4.68.4
+fvcore==0.1.5.post20221221
+iopath==0.1.10
+packaging==26.2
