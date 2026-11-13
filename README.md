@@ -37,7 +37,16 @@ python -m pip install --no-build-isolation chumpy==0.70
 python -m pip install -r requirements.txt
 ```
 
-Install [PyTorch3D](https://github.com/facebookresearch/pytorch3d/blob/main/INSTALL.md) against the same PyTorch environment to generate the canonical contact assets. Its compiled extensions must match the installed PyTorch and, for a CUDA build, the CUDA toolkit. See the [environment notes](docs/reproduction.md#environment) for the verified historical versions and the scope of installation validation.
+Build the CPU extension of [PyTorch3D](https://github.com/facebookresearch/pytorch3d/blob/main/INSTALL.md) against the installed PyTorch to generate the canonical contact assets. This requires a C++17 compiler; the asset generator itself runs on CPU.
+
+```bash
+git clone https://github.com/facebookresearch/pytorch3d.git ../pytorch3d-gcanet
+git -C ../pytorch3d-gcanet checkout 75ebeeaea0908c5527e7b1e305fbc7681382db47
+CUDA_VISIBLE_DEVICES="" PYTORCH3D_FORCE_NO_CUDA=1 MAX_JOBS=4 \
+  python -m pip install --no-build-isolation ../pytorch3d-gcanet
+```
+
+See the [environment notes](docs/reproduction.md#environment) for the reference setup. CUDA is still required for the training and evaluation commands below.
 
 ## Data
 

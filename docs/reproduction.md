@@ -6,7 +6,7 @@ The deployed GCANet pipeline uses a reconstruction network with GSF, a separatel
 
 The full historical BEHAVE inference pipeline ran under Python 3.10.20, PyTorch 2.6.0 + CUDA 11.8, torchvision 0.21.0, NumPy 1.26.4, SciPy 1.15.3, and SMPL-X/SMPL-H runtime package `smplx` 0.1.28. The README uses this Python/PyTorch combination and `requirements.txt` records the main Python dependencies.
 
-PyTorch3D is required for canonical asset generation. The historical installation reports version 0.7.8 and was built from a local source tree; that version string alone does not identify a public Git revision. Follow the [official source-build instructions](https://github.com/facebookresearch/pytorch3d/blob/main/INSTALL.md), build against the installed PyTorch, and retain the source revision and generated asset manifest for your reproduction. Installing an arbitrary PyTorch3D wheel for a different PyTorch build can fail at import or rendering time.
+PyTorch3D is required for canonical asset generation. The source tree in the reference environment matches the official PyTorch3D 0.7.8 revision [`75ebeeaea0908c5527e7b1e305fbc7681382db47`](https://github.com/facebookresearch/pytorch3d/commit/75ebeeaea0908c5527e7b1e305fbc7681382db47). Build it against the installed PyTorch following the [official source-build instructions](https://github.com/facebookresearch/pytorch3d/blob/main/INSTALL.md), and retain the source revision and generated asset manifest for your reproduction. The reference environment used a locally compiled extension with PyTorch 2.6; an arbitrary wheel built for a different PyTorch version may fail to import.
 
 Environment preparation and CPU source tests are separate from a full training reproduction. A new machine, a rebuilt rendering dependency, and regenerated canonical assets require validation with the complete data and externally prepared model assets. This release does not include new 50-epoch training results.
 
@@ -41,6 +41,8 @@ The tests cover contact lifting and gradients, pose derivatives, BCR acceptance 
 Annotation crops use a 1.3 expansion factor and are warped to 512 × 512. The five-channel RGB/mask initializer input is resized to 256 × 256; GSF extracts DINOv2 features from 448 × 448 RGB. The three query groups contain 73 joints, 431 sampled body vertices, and 64 canonical object controls.
 
 Training uses scale, rotation, and color augmentation. Test preprocessing is deterministic. Projection and visibility targets supervise GSF during training; inference retrieves image evidence using predicted geometry.
+
+This recipe follows the available reconstruction training implementation. The earlier training provenance of the GSF checkpoint used for the paper result is incomplete, so an exact replay of that checkpoint's original training cannot be established from the available records.
 
 The two accumulated microbatches retain their own valid-count normalizations. Changing microbatch size can change these reductions even if the nominal effective batch size is unchanged.
 
