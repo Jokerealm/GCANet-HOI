@@ -96,13 +96,14 @@ for name in ('gcanet.config', 'gcanet.io', 'gcanet.surface', 'gcanet.bcr',
 bad = []
 for name, module in list(sys.modules.items()):
     filename = getattr(module, '__file__', None)
-    if filename:
+    if filename and (name == 'gcanet' or name.startswith('gcanet.')):
         path = Path(filename).resolve()
-        if root.parent in path.parents and root not in path.parents:
+        if root not in path.parents:
             bad.append((name, str(path)))
 assert not bad, bad
 for forbidden in ('strong_vendor', 'pihoc_vendor', 'core.config', 'models.templates'):
-    assert forbidden not in sys.modules, forbidden
+    assert not any(name == forbidden or name.startswith(forbidden + '.')
+                   for name in sys.modules), forbidden
 print('isolated imports passed')
 '''
         result = self.process("-c", script, ROOT)

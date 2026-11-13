@@ -30,6 +30,7 @@ cd GCANet-HOI
 
 conda create -n gcanet python=3.10
 conda activate gcanet
+python -m pip install --upgrade pip setuptools wheel
 python -m pip install torch==2.6.0 torchvision==0.21.0 --index-url https://download.pytorch.org/whl/cu118
 python -m pip install numpy==1.26.4 scipy==1.15.3
 python -m pip install --no-build-isolation chumpy==0.70
@@ -40,7 +41,7 @@ Install [PyTorch3D](https://github.com/facebookresearch/pytorch3d/blob/main/INST
 
 ## Data
 
-Obtain [BEHAVE](https://virtualhumans.mpi-inf.mpg.de/behave/) and follow the preprocessing provided by [CONTHO](https://github.com/dqj5182/CONTHO_RELEASE#data) and [HOI-TG](https://github.com/ZhenrongWang/HOI-TG#data). The object metadata must include the 64 canonical control points and their adjacency graph. Prepare the licensed SMPL-H models and the external initialization assets as described in [docs/data.md](docs/data.md).
+Obtain the BEHAVE sequences and CONTHO `base_data`, add HOI-TG's graph and object metadata, and prepare the licensed SMPL-H models and external initialization assets. [docs/data.md](docs/data.md) gives the sources, exact paths, and commands for the HOI-TG additions and canonical asset generation. The repository does not require an HOI-TG checkout at runtime.
 
 ```text
 GCANet-HOI/
